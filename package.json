@@ -1,0 +1,29 @@
+{
+  "name": "superbox",
+  "version": "1.0.0",
+  "description": "Primitive React component for all your styles",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "babel src -d dist",
+    "start": "ok docs",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "ok-cli": "^2.0.8",
+    "react": "^16.4.1",
+    "styled-system": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "styled-components": "^3.3.3"
+  },
+  "peerDependencies": {
+    "styled-components": ">=3.0.0"
+  }
+}
