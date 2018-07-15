@@ -1,6 +1,6 @@
 {
   "name": "superbox",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Primitive React component for all your styles",
   "main": "dist/index.js",
   "scripts": {
