@@ -5,6 +5,11 @@
 
 Primitive React component for all your styles
 
+[![Build Status][badge]][travis]
+
+[badge]: https://img.shields.io/travis/jxnblk/superbox.svg?style=flat-square
+[travis]: https://travis-ci.org/jxnblk/superbox
+
 ```sh
 npm i superbox
 ```
