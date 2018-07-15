@@ -219,6 +219,7 @@ The `Box` component's props come from [styled-system][], which provides theme-ba
   - `py`: padding-top and padding-bottom
 - `width`: styled-system's [width](http://jxnblk.com/styled-system/api#width) prop
 - `css`: (string or object) pass custom CSS styles
+- `variant`: (string) apply props from a `boxes` variant defined in the theme
 - `is`: (string or components) change the underlying HTML tag or React component
 
 ## Related

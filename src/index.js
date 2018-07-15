@@ -64,6 +64,7 @@ Box.propTypes = {
   ...space.propTypes,
   ...fontSize.propTypes,
   ...width.propTypes,
+  variant: PropTypes.string,
   css: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object

@@ -1,13 +1,11 @@
 import React from 'react'
 import RebassMDX from '@rebass/mdx'
 import { Link } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 import Box from '../src'
 
-const components = {
-  Box,
-  Link,
-}
+// experiment
+const Styled = styled.div([], props => props)
 
 const theme = {
   boxes: {
@@ -25,6 +23,13 @@ const theme = {
       bg: 'magenta'
     }
   }
+}
+
+const components = {
+  theme,
+  Box,
+  Link,
+  Styled,
 }
 
 export default props =>

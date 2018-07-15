@@ -14,7 +14,7 @@
   "dependencies": {
     "ok-cli": "^2.0.8",
     "react": "^16.4.1",
-    "styled-system": "^3.0.0"
+    "styled-system": "^3.0.1"
   },
   "devDependencies": {
     "@rebass/mdx": "^1.0.0-1",
