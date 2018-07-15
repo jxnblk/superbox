@@ -4,3 +4,4 @@ docs
 coverage
 examples
 test.js
+.travis.yml
