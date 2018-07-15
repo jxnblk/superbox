@@ -6,6 +6,8 @@
   "scripts": {
     "prepare": "babel src -d dist && npm run emotion",
     "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
+    "logo": "repng docs/logo.js -d docs -f logo.png -w 256 -h 256",
+    "logo-svg": "scrs docs/logo.js --svg > docs/logo.svg",
     "start": "ok docs -o",
     "test": "jest"
   },
@@ -31,6 +33,7 @@
     "react-emotion": "^9.2.6",
     "react-test-renderer": "^16.4.1",
     "repng": "^3.0.0",
+    "scrs": "^1.1.0",
     "styled-components": "^3.3.3"
   },
   "peerDependencies": {

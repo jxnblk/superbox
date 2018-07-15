@@ -1,0 +1,4 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-12 -12 24 24" width="256" height="256"><path d="M 0 -11,L 9.526 -5.5,L 9.526 5.5,L 0 11,L -9.526 5.5,L -9.526 -5.5"></path><g transform="rotate(180)"><path d="M 9.526 -5.5,L 9.526 5.5,L 0 11,L -9.526 5.5,L -9.526 -5.5" style="fill:magenta;mix-blend-mode:screen;opacity:0.25"></path><path d="M 9.526 -5.5,L 9.526 5.5,L 0 11,L -9.526 5.5" style="fill:magenta;mix-blend-mode:screen;opacity:0.25"></path><path d="M 9.526 -5.5,L 9.526 5.5,L 0 11" style="fill:magenta;mix-blend-mode:screen;opacity:0.5"></path></g></svg>

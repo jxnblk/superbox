@@ -1,5 +1,8 @@
 import Box from '../src'
 import { Link } from 'react-router-dom'
+import Logo from './logo'
+
+<Logo size={96} />
 
 ```.jsx
 <Box variant='card'>

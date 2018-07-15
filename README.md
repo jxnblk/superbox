@@ -1,4 +1,6 @@
 
+<img src='docs/logo.png' />
+
 # superbox
 
 Primitive React component for all your styles
