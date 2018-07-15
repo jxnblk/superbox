@@ -122,6 +122,35 @@ export default Button
 
 ### Styling based on props
 
+You can adjust styling based on props when extending the Box component.
+
+```jsx
+const Banner = ({
+  large,
+  ...props
+}) =>
+  <Box
+    px={large ? 4 : 3}
+    py={large ? 3 : 2}
+    {...props}
+  />
+```
+
+This also works with the `css` prop.
+
+```jsx
+const Text = ({
+  caps,
+  ...props
+}) =>
+  <Box
+    {...props}
+    css={{
+      textTransform: caps ? 'uppercase' : null
+    }}
+  />
+```
+
 ### Theming
 
 To use a custom theme, add a [`ThemeProvider`][theme-provider] to the root of your application with a custom `theme` object.

@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "prepare": "babel src -d dist",
-    "start": "ok docs",
+    "start": "ok docs -o",
     "test": "jest"
   },
   "keywords": [],
@@ -17,6 +17,7 @@
     "styled-system": "^3.0.0"
   },
   "devDependencies": {
+    "@rebass/mdx": "^1.0.0-1",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
