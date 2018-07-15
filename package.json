@@ -30,6 +30,7 @@
     "react": "^16.4.1",
     "react-emotion": "^9.2.6",
     "react-test-renderer": "^16.4.1",
+    "repng": "^3.0.0",
     "styled-components": "^3.3.3"
   },
   "peerDependencies": {
