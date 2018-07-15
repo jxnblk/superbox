@@ -59,6 +59,10 @@ const Box = styled(mapThemeProps(Base, ({
 
 Box.displayName = 'Box'
 
+Box.defaultProps = {
+  theme: {}
+}
+
 Box.propTypes = {
   ...color.propTypes,
   ...space.propTypes,
