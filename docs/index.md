@@ -2,12 +2,7 @@ import Box from '../src'
 import { Link } from 'react-router-dom'
 
 ```.jsx
-<Box
-  innerRef={ref => console.log(ref)}
-  px={3}
-  py={4}
-  color='white'
-  bg='black'>
+<Box variant='card'>
   <Box
     is='h1'
     mt={0}

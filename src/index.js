@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { withTheme } from 'styled-components'
 import {
   color,
   space,
   fontSize,
-  width
+  width,
+  themeGet
 } from 'styled-system'
 
 const tag = React.forwardRef(({
@@ -37,13 +38,24 @@ const tag = React.forwardRef(({
   />
 ))
 
-const Box = styled(tag)([],
+const mapThemeProps = (Base, map) => withTheme(props => <Base {...map(props)} />)
+
+const Base = styled(tag)([],
   color,
   space,
   fontSize,
   width,
   props => props.css
 )
+
+const Box = styled(mapThemeProps(Base, ({
+  theme,
+  variant,
+  ...props
+}) => ({
+  ...themeGet([ 'boxes', variant ].join('.'), {})({ theme }),
+  ...props,
+})))([])
 
 Box.displayName = 'Box'
 

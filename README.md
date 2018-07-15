@@ -168,6 +168,33 @@ export default () =>
 
 See the styled-system docs on [theming](http://jxnblk.com/styled-system/getting-started#theming) for more information.
 
+### Variants
+
+Define a `boxes` object with variant props in your theme to enable the `variant` prop for the Box component.
+
+```js
+// example theme
+const theme = {
+  boxes: {
+    large: {
+      px: 4,
+      py: 5,
+    },
+    card: {
+      p: 3,
+      css: {
+        borderRadius: '4px',
+        boxShadow: '0 4px 16px rgba(0, 0, 0, .125)'
+      }
+    }
+  }
+}
+```
+
+```jsx
+<Box variant='card' />
+```
+
 ### Props
 
 The `Box` component's props come from [styled-system][], which provides theme-based, responsive props.
