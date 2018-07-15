@@ -22,6 +22,10 @@ export default props =>
   </Box>
 ```
 
+Try it out on [CodeSandbox][sandbox]
+
+[sandbox]: https://codesandbox.io/s/github/jxnblk/superbox/tree/master/examples/basic
+
 ## Usage
 
 ### Responsive Styles
