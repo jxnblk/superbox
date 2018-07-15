@@ -2,3 +2,5 @@ src
 docs
 .babelrc
 coverage
+examples
+test.js
