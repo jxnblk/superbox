@@ -29,9 +29,10 @@ export default props =>
   </Box>
 ```
 
-Try it out on [CodeSandbox][sandbox]
+Try it out on [CodeSandbox][sandbox] – it also works with [emotion][emotion-sandbox].
 
 [sandbox]: https://codesandbox.io/s/github/jxnblk/superbox/tree/master/examples/basic
+[emotion-sandbox]: https://codesandbox.io/s/github/jxnblk/superbox/tree/master/examples/emotion
 
 ## Usage
 
