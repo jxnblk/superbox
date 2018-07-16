@@ -1,5 +1,6 @@
 import React from 'react'
 import Box from 'superbox/emotion'
+import { ThemeProvider } from 'emotion-theming'
 
 const Root = props =>
   <Box
@@ -60,21 +61,23 @@ const Button = props =>
 export default class App extends React.Component {
   render() {
     return (
-      <Root
-        px={3}
-        py={4}>
-        <Container>
-          <Title>
-            superbox
-          </Title>
-          <Text mb={3}>
-            Primitive React component for all your styles
-          </Text>
-          <Button href='https://github.com/jxnblk/superbox'>
-            GitHub
-          </Button>
-        </Container>
-      </Root>
+      <ThemeProvider theme={{}}>
+        <Root
+          px={3}
+          py={4}>
+          <Container>
+            <Title>
+              superbox
+            </Title>
+            <Text mb={3}>
+              Primitive React component for all your styles
+            </Text>
+            <Button href='https://github.com/jxnblk/superbox'>
+              GitHub
+            </Button>
+          </Container>
+        </Root>
+      </ThemeProvider>
     )
   }
 }
