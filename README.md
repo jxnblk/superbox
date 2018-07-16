@@ -11,7 +11,7 @@ Primitive React component for all your styles
 [travis]: https://travis-ci.org/jxnblk/superbox
 
 ```sh
-npm i superbox
+npm i superbox styled-components
 ```
 
 ```jsx
@@ -27,6 +27,18 @@ export default props =>
     bg='black'>
     superbox
   </Box>
+```
+
+Superbox works with [styled-components][] out of the box.
+To use it with [emotion][], import `superbox/emotion`,
+and ensure the following are installed:
+
+```sh
+npm i emotion react-emotion emotion-theming
+```
+
+```js
+import Box from 'superbox/emotion'
 ```
 
 Try it out on [CodeSandbox][sandbox] – it also works with [emotion][emotion-sandbox].
