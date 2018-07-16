@@ -5,3 +5,5 @@ coverage
 examples
 test.js
 .travis.yml
+dist/theming/emotion.js
+dist/emotion/theming/styled-components.js
