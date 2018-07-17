@@ -5,7 +5,7 @@ import Logo from './logo'
 <Logo size={96} />
 
 ```.jsx
-<Box variant='card'>
+<Box>
   <Box
     is='h1'
     mt={0}

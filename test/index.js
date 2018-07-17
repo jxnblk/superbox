@@ -1,7 +1,8 @@
 import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
-import Box from './src'
+import { renderIntoDocument } from 'react-dom/test-utils'
+import Box from '../src'
 
 const renderJSON = el => render(el).toJSON()
 
@@ -49,23 +50,21 @@ describe('superbox', () => {
     expect(box.type).toBe('header')
   })
 
-  test('renders with theme variant props', () => {
-    const box = renderJSON(
-      <Box
-        variant='hello'
-        theme={{
-          boxes: {
-            hello: {
-              bg: 'tomato',
-              css: {
-                textTransform: 'uppercase'
-              }
-            }
-          }
-        }}
-      />
+  test('ref gets React component', () => {
+    const ref = React.createRef()
+    const box = renderIntoDocument(
+      <Box ref={ref} />
     )
-    expect(box).toHaveStyleRule('background-color', 'tomato')
-    expect(box).toHaveStyleRule('text-transform', 'uppercase')
+    expect(ref.current instanceof Box).toBe(true)
+  })
+
+  test('innerRef gets underlying element', () => {
+    const ref = React.createRef()
+    const box = renderIntoDocument(
+      <Box innerRef={ref} />
+    )
+    expect(ref.current instanceof Element).toBe(true)
+    expect(ref.current.tagName).toBe('DIV')
+    expect(typeof ref.current.className).toBe('string')
   })
 })

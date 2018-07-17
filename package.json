@@ -26,6 +26,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "emotion": "^9.2.6",
     "jest": "^23.4.1",
+    "jest-emotion": "^9.2.6",
     "jest-styled-components": "^5.0.1",
     "ok-cli": "^2.0.8",
     "prettier": "^1.13.7",
@@ -41,7 +42,7 @@
   },
   "jest": {
     "testMatch": [
-      "**/test.js"
+      "**/test/**/*.js"
     ]
   },
   "prettier": {

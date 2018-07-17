@@ -14,11 +14,7 @@
               {
                 original: '^styled-components$',
                 replacement: 'react-emotion'
-              },
-              {
-                original: './theming/styled-components',
-                replacement: './theming/emotion'
-              },
+              }
             ]
           }
         ]
