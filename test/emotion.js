@@ -1,5 +1,6 @@
 import React from 'react'
 import { create as render } from 'react-test-renderer'
+import { renderIntoDocument } from 'react-dom/test-utils'
 import { createSerializer, createMatchers } from 'jest-emotion'
 import * as emotion from 'emotion'
 import Box from '../dist/emotion'
@@ -44,5 +45,23 @@ describe('superbox/emotion', () => {
   test('renders a different element', () => {
     const box = renderJSON(<Box is="header" />)
     expect(box.type).toBe('header')
+  })
+
+  test('ref gets React component', () => {
+    const ref = React.createRef()
+    const box = renderIntoDocument(
+      <Box ref={ref} />
+    )
+    expect(ref.current instanceof Box).toBe(true)
+  })
+
+  test('innerRef gets underlying element', () => {
+    const ref = React.createRef()
+    const box = renderIntoDocument(
+      <Box innerRef={ref} />
+    )
+    expect(ref.current instanceof Element).toBe(true)
+    expect(ref.current.tagName).toBe('DIV')
+    expect(typeof ref.current.className).toBe('string')
   })
 })
