@@ -1,6 +1,7 @@
 import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
+import { ThemeProvider } from 'styled-components'
 import Box from './src'
 
 const renderJSON = el => render(el).toJSON()
@@ -64,6 +65,27 @@ describe('superbox', () => {
           }
         }}
       />
+    )
+    expect(box).toHaveStyleRule('background-color', 'tomato')
+    expect(box).toHaveStyleRule('text-transform', 'uppercase')
+  })
+
+  test('renders with theme from ThemeProvider', () => {
+    const theme = {
+      boxes: {
+        hello: {
+          bg: 'tomato',
+          css: {
+            textTransform: 'uppercase'
+          }
+        }
+      }
+    }
+
+    const box = renderJSON(
+      <ThemeProvider theme={theme}>
+        <Box variant='hello' />
+      </ThemeProvider>
     )
     expect(box).toHaveStyleRule('background-color', 'tomato')
     expect(box).toHaveStyleRule('text-transform', 'uppercase')

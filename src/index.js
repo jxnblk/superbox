@@ -39,7 +39,6 @@ const tag = React.forwardRef(({
   />
 ))
 
-const mapThemeProps = (Base, map) => withTheme(props => <Base {...map(props)} />)
 
 const Base = styled(tag)([],
   color,
@@ -49,14 +48,15 @@ const Base = styled(tag)([],
   props => props.css
 )
 
-const Box = styled(mapThemeProps(Base, ({
+const Box = ({
   theme,
   variant,
   ...props
-}) => ({
-  ...themeGet([ 'boxes', variant ].join('.'), {})({ theme }),
-  ...props,
-})))([])
+}) =>
+  <Base
+    {...props}
+    {...themeGet([ 'boxes', variant ].join('.'), {})({ theme })}
+  />
 
 Box.displayName = 'Box'
 
@@ -76,4 +76,5 @@ Box.propTypes = {
   ])
 }
 
-export default Box
+export default withTheme(Box)
+

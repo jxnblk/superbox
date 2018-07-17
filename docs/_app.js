@@ -36,6 +36,9 @@ export default props =>
   <ThemeProvider theme={theme}>
     <RebassMDX components={components}>
       <Box
+        innerRef={r => {
+          console.log(r)
+        }}
         mx='auto'
         px={3}
         py={4}
