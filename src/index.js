@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { withTheme } from './theming/styled-components'
 import {
   color,
   space,
@@ -39,9 +38,7 @@ const tag = React.forwardRef(({
   />
 ))
 
-const mapThemeProps = (Base, map) => withTheme(props => <Base {...map(props)} />)
-
-const Base = styled(tag)([],
+const Box = styled(tag)([],
   color,
   space,
   fontSize,
@@ -49,27 +46,13 @@ const Base = styled(tag)([],
   props => props.css
 )
 
-const Box = styled(mapThemeProps(Base, ({
-  theme,
-  variant,
-  ...props
-}) => ({
-  ...themeGet([ 'boxes', variant ].join('.'), {})({ theme }),
-  ...props,
-})))([])
-
 Box.displayName = 'Box'
-
-Box.defaultProps = {
-  theme: {}
-}
 
 Box.propTypes = {
   ...color.propTypes,
   ...space.propTypes,
   ...fontSize.propTypes,
   ...width.propTypes,
-  variant: PropTypes.string,
   css: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object

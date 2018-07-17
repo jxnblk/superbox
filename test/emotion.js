@@ -1,28 +1,27 @@
-import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
-import Box from './src'
+import { createSerializer, createMatchers } from 'jest-emotion'
+import * as emotion from 'emotion'
+import Box from '../dist/emotion'
+
+expect.addSnapshotSerializer(createSerializer(emotion))
+expect.extend(createMatchers(emotion))
 
 const renderJSON = el => render(el).toJSON()
 
-describe('superbox', () => {
+describe('superbox/emotion', () => {
   test('renders', () => {
     const box = renderJSON(<Box />)
     expect(box).toMatchInlineSnapshot(`
 <div
-  className=""
+  className="emotion-0"
 />
 `)
   })
 
   test('renders with styles', () => {
     const box = renderJSON(
-      <Box
-        width={1/2}
-        px={2}
-        color='tomato'
-        fontSize={3}
-      />
+      <Box width={1 / 2} px={2} color="tomato" fontSize={3} />
     )
     expect(box).toHaveStyleRule('width', '50%')
     expect(box).toHaveStyleRule('padding-left', '8px')
@@ -43,29 +42,7 @@ describe('superbox', () => {
   })
 
   test('renders a different element', () => {
-    const box = renderJSON(
-      <Box is='header' />
-    )
+    const box = renderJSON(<Box is="header" />)
     expect(box.type).toBe('header')
-  })
-
-  test('renders with theme variant props', () => {
-    const box = renderJSON(
-      <Box
-        variant='hello'
-        theme={{
-          boxes: {
-            hello: {
-              bg: 'tomato',
-              css: {
-                textTransform: 'uppercase'
-              }
-            }
-          }
-        }}
-      />
-    )
-    expect(box).toHaveStyleRule('background-color', 'tomato')
-    expect(box).toHaveStyleRule('text-transform', 'uppercase')
   })
 })
