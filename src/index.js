@@ -48,6 +48,10 @@ const Base = styled(tag)([],
   props => props.css
 )
 
+Base.defaultProps = {
+  theme: {}
+}
+
 const Box = ({
   theme,
   variant,

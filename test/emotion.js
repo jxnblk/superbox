@@ -1,12 +1,12 @@
 import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
-import { ThemeProvider } from 'styled-components'
-import Box from './src'
+import { ThemeProvider } from 'emotion-theming'
+import Box from '../dist/emotion'
 
 const renderJSON = el => render(el).toJSON()
 
-describe('superbox', () => {
+describe('superbox/emotion', () => {
   test('renders', () => {
     const box = renderJSON(<Box />)
     expect(box).toMatchInlineSnapshot(`
