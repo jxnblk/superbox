@@ -19,6 +19,21 @@
           }
         ]
       ]
+    },
+    isocss: {
+      plugins: [
+        [
+          'transform-rename-import',
+          {
+            replacements: [
+              {
+                original: '^styled-components$',
+                replacement: 'isocss/react'
+              }
+            ]
+          }
+        ]
+      ]
     }
   }
 }
