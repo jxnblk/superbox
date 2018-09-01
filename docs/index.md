@@ -1,6 +1,9 @@
 import Box from '../src'
 import { Link } from 'react-router-dom'
+import RebassMDX from '@rebass/mdx'
 import Logo from './logo'
+
+export { Root } from './components'
 
 <Logo size={96} />
 
