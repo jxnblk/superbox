@@ -7,5 +7,17 @@ module.exports = {
       }
     ],
     '@babel/react'
-  ]
+  ],
+  env: {
+    test: {
+      presets: [
+        [
+          '@babel/env', {
+            loose: true
+          }
+        ],
+        '@babel/react'
+      ]
+    }
+  }
 }

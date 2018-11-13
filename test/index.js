@@ -1,4 +1,3 @@
-import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
 import { renderIntoDocument } from 'react-dom/test-utils'
