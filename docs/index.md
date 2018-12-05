@@ -1,35 +1,27 @@
 import Box from '../src'
-import { Link } from 'react-router-dom'
-import RebassMDX from '@rebass/mdx'
+import { Link } from 'mdx-go'
 import Logo from './logo'
-
-export { Root } from './components'
 
 <Logo size={96} />
 
-```.jsx
-<Box>
+<Box
+  padding='32px'
+  marginTop='16px'
+  marginBottom='16px'
+  textAlign='center'
+  color='purple'
+  backgroundColor='#fef'
+  borderRadius='16px'
+  boxShadow='0 0 16px rgba(127, 0, 127, 0.5)'>
   <Box
-    is='h1'
-    mt={0}
-    mb={4}
-    fontSize={[ 6, 7 ]}>
-    superbox
+    fontSize='18px'
+    fontWeight='bold'
+    textTransform='uppercase'
+    letterSpacing='0.2em'>
+    Superbox
   </Box>
-  <Box mb={3}
-    fontSize={3}
-    css={{ fontWeight: 'bold' }}>
+  <Box>
     Primitive React component for all your styles
   </Box>
-  <Box
-    is={Link}
-    color='inherit'
-    css={{
-      fontWeight: 'bold'
-    }}
-    to='/getting-started'>
-    Docs
-  </Box>
 </Box>
-```
 

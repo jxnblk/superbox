@@ -1,12 +1,10 @@
 {
   "name": "superbox",
-  "version": "2.1.0",
+  "version": "3.0.0-0",
   "description": "Primitive React component for all your styles",
   "main": "dist/index.js",
   "scripts": {
-    "prepare": "babel src -d dist && npm run emotion && npm run isocss",
-    "emotion": "NODE_ENV=emotion babel src -d dist/emotion",
-    "isocss": "NODE_ENV=isocss babel src -d dist/isocss",
+    "prepare": "babel src -d dist",
     "logo": "repng docs/logo.js -d docs -f logo.png -w 256 -h 256",
     "logo-svg": "scrs docs/logo.js --svg > docs/logo.svg",
     "start": "mdx-go docs",
@@ -16,35 +14,35 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
-    "styled-system": "^3.0.1"
+    "known-css-properties": "^0.10.0"
   },
   "devDependencies": {
-    "@rebass/mdx": "^1.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-transform-rename-import": "^2.3.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "emotion": "^9.2.6",
-    "isocss": "^1.0.0-3",
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/preset-react": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
     "jest": "^23.4.1",
-    "jest-emotion": "^9.2.6",
-    "jest-styled-components": "^5.0.1",
-    "mdx-go": "^1.0.10",
+    "jest-styled-components": "^6.3.1",
+    "mdx-go": "^2.0.0-31",
     "prettier": "^1.13.7",
-    "react": "^16.4.1",
-    "react-emotion": "^9.2.6",
-    "react-test-renderer": "^16.4.1",
+    "react": "^16.6.3",
+    "react-test-renderer": "^16.6.3",
     "repng": "^3.0.0",
     "scrs": "^1.1.0",
-    "styled-components": "^3.3.3"
+    "styled-components": "^4.1.1"
   },
   "peerDependencies": {
-    "styled-components": ">=3.0.0"
+    "styled-components": ">=4.0.0"
   },
   "jest": {
+    "setupTestFrameworkScriptFile": "jest-styled-components",
     "testMatch": [
       "**/test/**/*.js"
+    ],
+    "coverageReporters": [
+      "html",
+      "lcov"
     ]
   },
   "prettier": {

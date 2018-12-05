@@ -1,4 +1,3 @@
-import 'jest-styled-components'
 import React from 'react'
 import { create as render } from 'react-test-renderer'
 import { renderIntoDocument } from 'react-dom/test-utils'
@@ -19,10 +18,11 @@ describe('superbox', () => {
   test('renders with styles', () => {
     const box = renderJSON(
       <Box
-        width={1/2}
-        px={2}
+        width='50%'
+        paddingLeft='8px'
+        paddingRight='8px'
         color='tomato'
-        fontSize={3}
+        fontSize='20px'
       />
     )
     expect(box).toHaveStyleRule('width', '50%')
@@ -30,6 +30,40 @@ describe('superbox', () => {
     expect(box).toHaveStyleRule('padding-right', '8px')
     expect(box).toHaveStyleRule('color', 'tomato')
     expect(box).toHaveStyleRule('font-size', '20px')
+  })
+
+  test('renders responsive styles', () => {
+    const box = renderJSON(
+      <Box
+        width={[ '100%', '50%', '25%' ]}
+      />
+    )
+    expect(box).toHaveStyleRule('width', '100%')
+    expect(box).toHaveStyleRule('width', '50%', {
+      media: 'screen and (min-width:40em)'
+    })
+    expect(box).toHaveStyleRule('width', '25%', {
+      media: 'screen and (min-width:52em)'
+    })
+  })
+
+  test('does not throw when the array length is too long', () => {
+    expect(() => {
+      const box = renderJSON(
+        <Box
+          width={[ '100%', '50%', '25%', null, '25%', null, '50%' ]}
+        />
+      )
+    }).not.toThrow()
+  })
+
+  test('renders numbers as pixel units', () => {
+    const box = renderJSON(
+      <Box
+        fontSize={32}
+      />
+    )
+    expect(box).toHaveStyleRule('font-size', '32px')
   })
 
   test('renders with css prop', () => {
@@ -45,26 +79,8 @@ describe('superbox', () => {
 
   test('renders a different element', () => {
     const box = renderJSON(
-      <Box is='header' />
+      <Box as='header' />
     )
     expect(box.type).toBe('header')
-  })
-
-  test('ref gets React component', () => {
-    const ref = React.createRef()
-    const box = renderIntoDocument(
-      <Box ref={ref} />
-    )
-    expect(ref.current instanceof Box).toBe(true)
-  })
-
-  test('innerRef gets underlying element', () => {
-    const ref = React.createRef()
-    const box = renderIntoDocument(
-      <Box innerRef={ref} />
-    )
-    expect(ref.current instanceof Element).toBe(true)
-    expect(ref.current.tagName).toBe('DIV')
-    expect(typeof ref.current.className).toBe('string')
   })
 })

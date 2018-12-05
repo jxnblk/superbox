@@ -1,6 +1,7 @@
 src
 docs
 .babelrc
+babel.config.js
 coverage
 examples
 test.js
